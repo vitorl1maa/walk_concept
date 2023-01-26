@@ -30,3 +30,16 @@
 #sneaker-card {
   background-color: blue;
 }
+
+/* SlideComponent */
+.card {
+  cursor: pointer;
+  
+}
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 10px 67px;
+  transition: .5s;
+
+}
+

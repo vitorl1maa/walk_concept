@@ -4,14 +4,13 @@ import CardGroup from 'react-bootstrap/CardGroup';
 const SneakersGridComponent = () => {
   return (
     <div >
-       <CardGroup>
-      <Card>
-        <Card.Img variant="top" src="https://imgnike-a.akamaihd.net/768x768/025350P1.jpg"/>
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
+       <CardGroup >
+      <Card id='card'>
+        <Card.Img variant="top" src="https://imgnike-a.akamaihd.net/768x768/025350P1.jpg" />
+        <Card.Body >
+          <Card.Title className='fw-bolder'>Air Jordan 1 Retro High OG</Card.Title>
+          <Card.Text className='mt-3'>
+            Preço: R$ 1699,99
           </Card.Text>
         </Card.Body>
 

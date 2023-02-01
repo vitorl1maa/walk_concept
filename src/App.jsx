@@ -1,27 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import './css/global.css'
 import NavbarComponent from './components/NavbarComponent'
-import SlideComponent from './components/SlideComponent'
 import Marketplace from './pages/Marketplace/Marketplace'
+import { DataProvider } from '../src/context/DataContext'
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
-
-
   return (
+    <DataProvider>
     <div className="App">
       <BrowserRouter>
-        <NavbarComponent/>
-        <div className="container-fluid p-0">
-          <Routes>
+        <Routes>
           <Route path='/' element={<Marketplace/>} />
         </Routes>
-        </div>
       </BrowserRouter>
-      
+      <NavbarComponent/>
     </div>
+    </DataProvider>
   )
 }
 

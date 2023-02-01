@@ -1,25 +1,28 @@
+import React from 'react'
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-import {Bag} from 'phosphor-react'
-
-const NavbarComponent = () => {
+import {Bag, UserCircle} from 'phosphor-react'
+function NavbarComponent() {
   return (
-    <div className='container-fluid'>
-      <Navbar className='p-3 bg-white' expand="lg" id='navbar' >
-        <Navbar.Brand href="#" bg-dark>Walk Concept</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+    <div>
+      <Navbar style={{background: '#000000'}} expand="lg" className='py-4' id='navbar'>
+      <Container container>
+        <Navbar.Brand href="#" style={{color: '#ffff'}}>Walk Concept</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" style={{background: '#ffff'}} />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '150px' }}
+            className="m-auto my-2 my-lg-0"
+            style={{ maxHeight: '100vh' }}
             navbarScroll
           >
-            <Nav.Link href="#action1" className=''>Ofertas</Nav.Link>
-            <Nav.Link href="#action2">Lançamentos</Nav.Link>
-            <Nav.Link href="#action2">Em Estoque</Nav.Link>
+            <Nav.Link href="/" style={{color: '#ffff'}}>Home</Nav.Link>
+            <Nav.Link href="#action2" style={{color: '#ffff'}}>Ofertas</Nav.Link>
+            <Nav.Link href="#" style={{color: '#ffff'}}>Lançamentos</Nav.Link>
+            <Nav.Link href="#" style={{color: '#ffff'}}>Em estoque</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -28,10 +31,26 @@ const NavbarComponent = () => {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-secondary" className='me-3'>Buscar</Button>
-            <Nav.Link href="#action2"><Bag size={32} /></Nav.Link>
+            <Button 
+              style={{
+               backgroundColor: '#DDDDDD', 
+               color: '#000000',
+               border: 'none',
+              }} 
+            >
+              Search
+            </Button>
           </Form>
+          <div className='d-flex nav-icons'>
+            <Nav.Link className='px-3 nav-link-bag' href="#/link"><Bag size={40}
+            color='#ffff'
+            /><span>0</span></Nav.Link>
+            <Nav.Link href="#/link"><UserCircle size={40}
+            color='#ffff'
+            /></Nav.Link>
+          </div>
         </Navbar.Collapse>
+      </Container>
     </Navbar>
     </div>
   )

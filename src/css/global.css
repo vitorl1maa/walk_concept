@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
+.App {
+  max-width: 100vw;
+  max-height: 100vh;
+  margin-top: 5rem;
+}
+
+#navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+#navbar .nav-link-bag {
+  position: relative;
+  cursor: pointer;
+}
+#navbar .nav-link-bag span {
+  position: absolute;
+  top: 0rem;
+  right: 0.5rem;
+  width: -2.5rem;
+  height: 1.3rem;
+  background: #ff0000;
+  color: white;
+  border-radius: 50%;
+  width: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#slider {
+  max-height: 100%;
+}
+#slider img {
+  width: 100% !important;
+  height: 90vh;
+}
+
+/*# sourceMappingURL=global.css.map */

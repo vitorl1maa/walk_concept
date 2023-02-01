@@ -1,12 +1,12 @@
 import React from 'react'
-import SlideComponent from '../../components/SlideComponent'
-import SneakersGridComponent from '../../components/SneakersGridComponent'
+import SliderComponent from '../../components/SliderComponent'
+import GridProductsComponents from '../../components/GridProductsComponent'
 
 const Marketplace = () => {
   return (
     <div>
-      <SlideComponent/>
-      <SneakersGridComponent/>
+      <SliderComponent/>
+      <GridProductsComponents/>
     </div>
   )
 }

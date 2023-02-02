@@ -14,11 +14,9 @@ const GridCardsComponents = () => {
   console.log(products)
 
   return (
-    <div className='container-fluid'>
+    <div id='content-produtcs' >
       {
         products.map(products => (
-          <Row sm={2} xs={1}>
-            <Col>
               <ProductItemComponent 
                 key={products.id}
                 id={products.id}
@@ -27,9 +25,10 @@ const GridCardsComponents = () => {
                 price={products.price}
                 image={products.image}
                 promotion={products.promotion}
+                sizes={products.sizes}
+                
               />
-            </Col>
-          </Row>
+              
         ))
       }
       

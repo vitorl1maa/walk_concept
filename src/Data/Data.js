@@ -9,6 +9,16 @@ const data = {
       price: 899,
       image: "https://imgnike-a.akamaihd.net/768x768/01684215.jpg",
       promotion: 'Em promoção',
+      sizes: [
+        {id: 1, size: 35}, 
+      {id: 2, size:38}, 
+      {id: 3, size:39}, 
+      {id: 4, size:40}, 
+      {id: 5, size:43},
+      {id: 6, size:45},
+      {id: 7, size:45},
+      ]
+
     },
     {
       id: 2,

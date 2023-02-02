@@ -46,4 +46,13 @@
   height: 90vh;
 }
 
+#content-produtcs {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 1rem 1rem;
+}
+
+/*---------CartComponet------------*/
+
 /*# sourceMappingURL=global.css.map */

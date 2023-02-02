@@ -6,6 +6,8 @@ import { Row, Col } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 
+import { Tag } from 'phosphor-react';
+
 const ProductItemComponent = ({
   id,
   title,
@@ -13,29 +15,30 @@ const ProductItemComponent = ({
   price,
   image,
   promotion,
-
-
+  sizes,
 
 }) => {
   return (
-    <div>
-      <Row>
-        <Col className='p-3'>
-          <Card style={{ width: '100%' }} className='products'>
+    <div >
+          <Card style={{ width: '100%'}} className='products'>
           <Card.Img variant="top" src={image} />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>
              {subtitle}
             </Card.Text>
+              {/* {
+                sizes?.map(({size, id}) => (
+                    <ul key={id}>
+                      <li key={size}>{size}</li>
+                    </ul>
+                )) 
+              } */}
             <Link to='/detail'>
-              <Button >Comprar</Button>
+              <Button className='px-4 border-0' style={{backgroundColor: '#8758FF'}}>Comprar</Button>
             </Link>
-            <span>{promotion}</span>
             </Card.Body>
           </Card>
-        </Col>
-      </Row>
     </div>
   )
 }

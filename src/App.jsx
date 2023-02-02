@@ -5,6 +5,7 @@ import { DataProvider } from '../src/context/DataContext'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+
 function App() {
   return (
     <DataProvider>

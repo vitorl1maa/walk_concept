@@ -23,7 +23,7 @@ const SliderComponent = () => {
       <Carousel.Item >
         <img
           className="d-block w-100"
-          src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1412&q=80"
+          src="https://images.unsplash.com/photo-1530511250146-026c208e059e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1265&q=80"
           alt="Second slide"
         />
 

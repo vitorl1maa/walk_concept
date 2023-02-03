@@ -53,6 +53,24 @@
   gap: 1rem 1rem;
 }
 
-/*---------CartComponet------------*/
+@media (max-width: 500px) {
+  .cart-icon {
+    display: flex !important;
+  }
+  .cart-icon-mobile {
+    display: none !important;
+  }
+  .cart-items {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .cart-items .cart-body-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+}
 
 /*# sourceMappingURL=global.css.map */

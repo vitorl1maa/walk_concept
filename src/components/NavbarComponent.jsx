@@ -1,21 +1,24 @@
+import CartComponent from './CartComponent';
+import { DataContext } from '../context/DataContext';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 import {Bag, UserCircle} from 'phosphor-react'
 
 
-
-function NavbarComponent() {
+function NavbarComponent({name, ...props}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const value = useContext(DataContext);
+  const [cart] = value.cart
 
   return (
     <div>
@@ -29,6 +32,13 @@ function NavbarComponent() {
           <Navbar.Brand href="#" style={{ color: "#ffff" }}>
             Walk Concept
           </Navbar.Brand>
+          <Nav.Link
+            className="px-3 nav-link-bag cart-icon"
+            style={{ display: "none" }}
+          >
+            <Bag size={40} color="#ffff" onClick={handleShow} />
+            <span>{cart.length}</span>
+          </Nav.Link>
           <Navbar.Toggle
             aria-controls="navbarScroll"
             style={{ background: "#ffff" }}
@@ -53,18 +63,25 @@ function NavbarComponent() {
               </Nav.Link>
             </Nav>
             <div className="d-flex nav-icons">
-              <Nav.Link className="px-3 nav-link-bag" onClick={handleShow}>
-                <Bag size={40} color="#ffff" />
-                <span>0</span>
+              <Nav.Link className="px-3 nav-link-bag cart-icon-mobile">
+                <Bag size={40} color="#ffff" onClick={handleShow} />
+                <span>{cart.length}</span>
               </Nav.Link>
               <div>
-                <Offcanvas className='w-75' show={show} onHide={handleClose}>
+                <Offcanvas
+                  className="w-auto"
+                  show={show}
+                  onHide={handleClose}
+                  {...props}
+                  placement="end"
+                >
                   <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                    <Offcanvas.Title className="border-bottom w-100 pb-2">
+                      <h3>Seu Carrinho</h3>
+                    </Offcanvas.Title>
                   </Offcanvas.Header>
                   <Offcanvas.Body>
-                    Some text as placeholder. In real life you can have the
-                    elements you have chosen. Like, text, images, lists, etc.
+                    <CartComponent />
                   </Offcanvas.Body>
                 </Offcanvas>
               </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CartComponent from './CartComponent';
 import { DataContext } from '../context/DataContext';
 
@@ -5,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React, { useContext, useState } from "react";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 import {Bag, UserCircle} from 'phosphor-react'
@@ -18,7 +18,8 @@ function NavbarComponent({name, ...props}) {
   const handleShow = () => setShow(true);
 
   const value = useContext(DataContext);
-  const [cart] = value.cart
+  const [cart] = value.cart;
+
 
   return (
     <div>
@@ -29,9 +30,14 @@ function NavbarComponent({name, ...props}) {
         id="navbar"
       >
         <Container container>
-          <Navbar.Brand href="#" style={{ color: "#ffff" }}>
-            Walk Concept
-          </Navbar.Brand>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Navbar.Brand
+              href="/"
+              style={{ color: "#ffff"}}
+            >
+              Walk Concept
+            </Navbar.Brand>
+          </Link>
           <Nav.Link
             className="px-3 nav-link-bag cart-icon"
             style={{ display: "none" }}
@@ -49,9 +55,14 @@ function NavbarComponent({name, ...props}) {
               style={{ maxHeight: "100vh" }}
               navbarScroll
             >
-              <Nav.Link href="/" style={{ color: "#ffff" }}>
-                Home
-              </Nav.Link>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Nav.Link
+                  href="/"
+                  style={{ color: "#ffff", textDecoration: "none" }}
+                >
+                  Home
+                </Nav.Link>
+              </Link>
               <Nav.Link href="#action2" style={{ color: "#ffff" }}>
                 Ofertas
               </Nav.Link>

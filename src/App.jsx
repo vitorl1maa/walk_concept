@@ -13,10 +13,10 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Marketplace />} />
-            <Route path="/sneaker_detail" element={<SneakerDetail />} />
+            <Route path="/sneaker_detail/:id" element={<SneakerDetail />} />
           </Routes>
+          <NavbarComponent />
         </BrowserRouter>
-        <NavbarComponent />
       </div>
     </DataProvider>
   );

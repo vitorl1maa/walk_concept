@@ -1,7 +1,7 @@
 import React from "react";
 import SliderComponent from "../../components/SliderComponent";
 import GridProductsComponents from "../../components/GridProductsComponent";
-import SneakerDetail from "../SneakerDetail/SneakerDetail";
+import NavbarComponent from "../../components/NavbarComponent";
 
 const Marketplace = () => {
   return (

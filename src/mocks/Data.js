@@ -473,6 +473,41 @@ const data = {
       subtitle: "Lucky Green",
       image: "https://imgnike-a.akamaihd.net/768x768/025292NX.jpg",
       date_release: "2023-03-05",
+    },
+    {
+      id: 2,
+      title: "Air Jordan XXXVII",
+      subtitle: "Rui Hachimura",
+      image: "https://imgnike-a.akamaihd.net/768x768/025355P1.jpg",
+      date_release: "2023-03-20",
+    },
+    {
+      id: 3,
+      title: "Air Zoom Flight 95",
+      subtitle: "Black and Valerian Blue",
+      image: "https://imgnike-a.akamaihd.net/768x768/024505ID.jpg",
+      date_release: "2023-03-16",
+    },
+    {
+      id: 4,
+      title: "Air Max Penny",
+      subtitle: "Rattan",
+      image: "https://imgnike-a.akamaihd.net/768x768/0244793X.jpg",
+      date_release: "2023-03-16",
+    },
+    {
+      id: 5,
+      title: "Air Force 1",
+      subtitle: "Certified Fresh",
+      image: "https://imgnike-a.akamaihd.net/768x768/0244537T.jpg",
+      date_release: "2023-04-01",
+    },
+    {
+      id: 6,
+      title: "SB Dunk High Decon",
+      subtitle: "Gorge Green",
+      image: "https://imgnike-a.akamaihd.net/768x768/024506NX.jpg",
+      date_release: "2023-04-22",
     }
   ]
 };

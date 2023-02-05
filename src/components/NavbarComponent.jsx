@@ -57,16 +57,17 @@ function NavbarComponent({name, ...props}) {
                 style={{ textDecoration: "none" }}
               >
                 <span
-                  href="/"
                   style={{ color: "#ffff", textDecoration: "none" }}
+                  className="px-md-5"
                 >
                   Home
                 </span>
               </Link>
-              <Link to='/calendar'>
-                <span href="#" style={{ color: "#ffff" }} className="px-md-5">
-                  Calendario
-                </span>
+              <Link
+                to="/calendar"
+                style={{ color: "#ffff", textDecoration: "none" }}
+              >
+                <span className="px-md-5">Calendario</span>
               </Link>
             </Nav>
             <div className="d-flex nav-icons">

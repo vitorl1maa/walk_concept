@@ -6,6 +6,7 @@ import { DataProvider } from "../src/context/DataContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SneakerDetail from "./pages/SneakerDetail/SneakerDetail";
 import CalendarRealease from "./pages/Calendar/CalendarRealease";
+import FooterComponent from "./components/FooterComponent";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/calendar" element={<CalendarRealease/>} />
           </Routes>
           <NavbarComponent />
+          <FooterComponent/>
         </BrowserRouter>
       </div>
     </DataProvider>

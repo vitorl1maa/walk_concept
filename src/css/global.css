@@ -136,6 +136,9 @@ a {
   .sizes-sneakers {
     width: 100%;
   }
+  #footer .footer-list {
+    display: none !important;
+  }
 }
 
 /*# sourceMappingURL=global.css.map */

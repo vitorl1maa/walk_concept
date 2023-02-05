@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import React, { useContext, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-import {Bag, UserCircle} from 'phosphor-react'
+import {Bag, UserCircle, List} from 'phosphor-react'
 
 
 function NavbarComponent({name, ...props}) {
@@ -29,14 +29,11 @@ function NavbarComponent({name, ...props}) {
         className="py-4"
         id="navbar"
       >
-        <Container container>
+        <Container>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <Navbar.Brand
-              href="/"
-              style={{ color: "#ffff"}}
-            >
+            <div href="/" style={{ color: "#ffff" }}>
               Walk Concept
-            </Navbar.Brand>
+            </div>
           </Link>
           <Nav.Link
             className="px-3 nav-link-bag cart-icon"
@@ -45,33 +42,32 @@ function NavbarComponent({name, ...props}) {
             <Bag size={40} color="#ffff" onClick={handleShow} />
             <span>{cart.length}</span>
           </Nav.Link>
-          <Navbar.Toggle
-            aria-controls="navbarScroll"
-            style={{ background: "#ffff" }}
-          />
+          <Navbar.Toggle aria-controls="navbarScroll">
+            <List size={32} color="#ffff" />
+          </Navbar.Toggle>
           <Navbar.Collapse id="navbarScroll">
             <Nav
               className="m-auto my-2 my-lg-0"
               style={{ maxHeight: "100vh" }}
               navbarScroll
             >
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <Nav.Link
+              <Link
+                to="/"
+                className="d-flex align-items-md-center px-md-5"
+                style={{ textDecoration: "none" }}
+              >
+                <span
                   href="/"
                   style={{ color: "#ffff", textDecoration: "none" }}
                 >
                   Home
-                </Nav.Link>
+                </span>
               </Link>
-              <Nav.Link href="#action2" style={{ color: "#ffff" }}>
-                Ofertas
-              </Nav.Link>
-              <Nav.Link href="#" style={{ color: "#ffff" }}>
-                Lançamentos
-              </Nav.Link>
-              <Nav.Link href="#" style={{ color: "#ffff" }}>
-                Em estoque
-              </Nav.Link>
+              <Link to='/calendar'>
+                <span href="#" style={{ color: "#ffff" }} className="px-md-5">
+                  Calendario
+                </span>
+              </Link>
             </Nav>
             <div className="d-flex nav-icons">
               <Nav.Link className="px-3 nav-link-bag cart-icon-mobile">
@@ -80,7 +76,7 @@ function NavbarComponent({name, ...props}) {
               </Nav.Link>
               <div>
                 <Offcanvas
-                  className="w-auto"
+                  id="offcanvas"
                   show={show}
                   onHide={handleClose}
                   {...props}

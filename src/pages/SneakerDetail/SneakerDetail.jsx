@@ -3,10 +3,13 @@ import { useParams } from "react-router-dom";
 
 import { DataContext } from "../../context/DataContext";
 
+import Button from "react-bootstrap/Button";
+
 const SneakerDetail = () => {
   const [detail, setDetail] = useState([]);
   const value = useContext(DataContext);
   const [products] = value.products;
+  const addCart = value.addCart;
   const params = useParams();
 
   useEffect(() => {
@@ -18,17 +21,17 @@ const SneakerDetail = () => {
   }, [params.id, products]);
 
   const formatCurrency = (value) => {
-    return `R$ ${value.toFixed(2).toString().replace(".", ",")}`;
+    return `R$ ${value?.toFixed(2).toString().replace(".", ",")}`;
   };
 
   return (
-    <div className="p-3">
+    <div id="sneaker-container">
       {
-        <div className="mt-5 details-body">
+        <div className="details-body">
           <h1 className="pb-2">{detail.title}</h1>
           <h3 className="pb-2">{detail.subtitle}</h3>
           <div className="d-md-flex">
-            <div id="content-details-products" className="row">
+            <div className="row content-details-products">
               <img
                 src={detail.image}
                 alt=""
@@ -51,15 +54,16 @@ const SneakerDetail = () => {
               />
             </div>
             <div className="body-details">
-              <p className="fs-5 mb-5">{detail.description}</p>
-              <h2>Preço:{formatCurrency(detail.price)} </h2>
-              <h3>Tamanho:</h3>
-              <ul className="d-md-flex sizes-sneakers">
-                {detail.sizes &&
-                  detail.sizes.map((size) => (
-                    <li key={size.id}>{size.size}</li>
-                  ))}
-              </ul>
+              <p className="fs-5 my-5">{detail.description}</p>
+              <h3 className="my-5">Preço: {formatCurrency(detail.price)} </h3>
+              <Button
+                className="px-5 fs-3 border-0"
+                style={{ backgroundColor: "#ff0000" }}
+                onClick={() => addCart(detail.id)}
+              >
+                Comprar
+              </Button>
+              <p className="mt-3">Somente uma unidade por CPF</p>
             </div>
           </div>
         </div>

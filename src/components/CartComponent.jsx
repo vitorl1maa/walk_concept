@@ -1,18 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import { DataContext } from '../context/DataContext';
+import { Link } from 'react-router-dom';
+
 import { Button } from 'react-bootstrap';
 import { Trash, ArrowFatUp, ArrowFatDown } from "phosphor-react";
 
-import { DataContext } from '../context/DataContext';
 
 const CartComponent = () => {
   const value = useContext(DataContext);
   const [cart, setCart] = value.cart;
-  const [total] = value.total
+  const [total] = value.total;
+  const [selectedSize, setSelectedSize] = useState([]);
 
-  const formatCurrency = (value) => {
-    return `R$ ${value.toFixed(2).toString().replace(".", ",")}`;
-  };
-
+  
   // remove itens do carrinho
   const handleRemove = (id) => {
     cart.forEach((item, index) => {
@@ -23,33 +23,24 @@ const CartComponent = () => {
     });
     setCart([...cart]);
   };
-
-  //soma itens no carrinho
-  const sum = (id) => {
-    cart.forEach((item) => {
-      if (item.id === id) {
-        item.quantity += 1;
-      }
-      setCart([...cart]);
-    });
+  
+  
+  const formatCurrency = (value) => {
+    return `R$ ${value.toFixed(2).toString().replace(".", ",")}`;
   };
 
-  // subtrai os itens do carrinho
-  const subtract = (id) => {
-    cart.forEach((item) => {
-      if (item.id === id) {
-        item.quantity === 1 ? (item.quantity = 1) : (item.quantity -= 1);
-      }
-      setCart([...cart]);
-    });
+  const handleSizeSelection = (id) => {
+    setSelectedSize({ ...selectedSize, [id]: true });
+    
   };
+
 
   return (
-    <div>
+    <div className="">
       {cart.length === 0 ? (
         <div>
           <h1 className="text-center">Carrinho vazio</h1>
-          <p className='mx-5 text-center'>
+          <p className="mx-5 text-center">
             Navegue pela loja e encontre seu sneaker favorito.
           </p>
         </div>
@@ -57,7 +48,7 @@ const CartComponent = () => {
         <>
           {cart.map((product) => (
             <div
-              className="d-flex justify-content-between m-2 p-4 cart-items"
+              className="d-flex justify-content-between m-2 p-4 cart-items "
               style={{ backgroundColor: "#EAEAEA" }}
               key={product.id}
             >
@@ -65,26 +56,29 @@ const CartComponent = () => {
                 <img src={product.image} alt="" className="w-100" />
               </div>
               <div className="w-100 px-4 cart-body-content ">
-                <h2>{product.title} </h2>
-                <h3>{product.subtitle} </h3>
-                <p style={{ fontWeight: "600", padding: ".5rem 0" }}>
+                <h3 className="mt-4">{product.title} </h3>
+                <h1>{product.subtitle} </h1>
+                <p
+                  className="fs-4"
+                  style={{ fontWeight: "600", padding: ".5rem 0" }}
+                >
                   {formatCurrency(product.price)}
                 </p>
-                <p>Tamanho: 43</p>
-                <div className="d-flex align-items-center">
-                  <span className="d-flex align-items-center flex-column ">
-                    <button className="border-0 bg-transparent">
-                      <ArrowFatUp size={32} onClick={() => sum(product.id)} />
-                    </button>
-                    Quantidade: {product.quantity}
-                    <button className="border-0 bg-transparent">
-                      <ArrowFatDown
-                        size={32}
-                        onClick={() => subtract(product.id)}
-                      />
-                    </button>
-                  </span>
-                </div>
+                <p>
+                  Tamanho:
+                  <ul className="sizes-sneakers">
+                    {product.sizes &&
+                      product.sizes.map((size) => (
+                        <li
+                          key={size.id}
+                           className={selectedSize[size.id] ? 'selected' : ''}
+                          onClick={() => handleSizeSelection(size.id)}
+                        >
+                          {size.size}
+                        </li>
+                      ))}
+                  </ul>
+                </p>
               </div>
               <div>
                 <button
@@ -97,8 +91,21 @@ const CartComponent = () => {
             </div>
           ))}
           <div className="mt-5">
-            <h1>Total: {formatCurrency(total)} </h1>
-            <Button>Finalizar compra</Button>
+            <h1 className="mx-2 mb-3">Total: {formatCurrency(total)} </h1>
+            <Button
+              className="border-0 fs-4 mx-2"
+              style={{ backgroundColor: "#ff0000" }}
+            >
+              Finalizar compra
+            </Button>
+            <Link to="/">
+              <Button
+                className="border-0 fs-4 mx-2"
+                style={{ backgroundColor: "#ff0000" }}
+              >
+                Continuar comprando
+              </Button>
+            </Link>
           </div>
         </>
       )}

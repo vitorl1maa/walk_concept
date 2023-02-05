@@ -22,7 +22,6 @@ a
   right: 0
   z-index: 1000
 
-
   .nav-link-bag
     position: relative
     cursor: pointer
@@ -40,6 +39,9 @@ a
       justify-content: center
       align-items: center
 
+#offcanvas
+  width: 50%
+
 #slider
   max-height: 100%
   img
@@ -54,7 +56,9 @@ a
   gap: 1rem 1rem
 
 /***********SneakerDetail***********/
-#content-details-products
+#sneaker-container
+  padding: 2rem 2rem 
+.content-details-products
   width: 50%
   margin: 0
   .card-image-details
@@ -63,20 +67,34 @@ a
 .body-details
   width: 50%
   margin: 0 3rem
-  
 
 .sizes-sneakers
   padding: 0
+  display: flex
+  width: 100%
+  flex-wrap: wrap
+  gap: 1rem
+
+  .selected
+    background: #000000
+    color: #ffff
+
   li
     font-size: 1.3rem
     padding: .5rem 1rem
-    margin: 0 .2rem
+    margin: .2rem
     border: 1px solid #000000
     border-radius: 5px
     cursor: pointer
     background-color: #f5f5f5
+    &:hover
+      background-color: #000000
+      color: #ffff
    
 @media(max-width: 500px)
+
+  #offcanvas
+    width: 100%
 
   .cart-icon
     display: flex !important
@@ -89,10 +107,8 @@ a
     flex-direction: column !important
     
   /***********SneakerDetail***********/
-  #content-details-products
+  .content-details-products
     width: 100%
-
-
     .card-image-details
       width: 100%
 
@@ -103,5 +119,6 @@ a
       padding: 0 2rem
       text-align: center
     
-
+  .sizes-sneakers
+    width: 100%
 

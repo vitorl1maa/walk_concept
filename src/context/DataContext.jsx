@@ -5,6 +5,7 @@ export const DataContext = createContext();
 
 export const DataProvider = (props) => {
   const [products, setProducts] = useState([]);
+  const [releases, setReleases] = useState([]);
   const [cart, setCart] = useState([])
   const [total, setTotal] = useState(0);
 
@@ -18,6 +19,15 @@ export const DataProvider = (props) => {
     }
 
   }, []);
+
+    useEffect(() => {
+      const releases = data.calendar;
+      if (releases) {
+        setReleases(releases);
+      } else {
+        setReleases([]);
+      }
+    }, []);
 
   // Adiciona item no carrinho
   const addCart = (id) => {
@@ -51,7 +61,7 @@ export const DataProvider = (props) => {
   useEffect(()=> {
     const getTotal = () => {
       const res = cart.reduce((prev, item) => {
-        return prev + (item.price * item.quantity)
+        return prev + (item.price)
       }, 0)
       setTotal(res);
     }
@@ -62,6 +72,7 @@ export const DataProvider = (props) => {
 
   const value = {
     products: [products],
+    releases: [releases],
     addCart: addCart,
     cart: [cart, setCart],
     total: [total, setTotal]

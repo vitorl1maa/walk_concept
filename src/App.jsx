@@ -5,6 +5,8 @@ import { DataProvider } from "../src/context/DataContext";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SneakerDetail from "./pages/SneakerDetail/SneakerDetail";
+import CalendarRealease from "./pages/Calendar/CalendarRealease";
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Marketplace />} />
             <Route path="/sneaker_detail/:id" element={<SneakerDetail />} />
+            <Route path="/calendar" element={<CalendarRealease/>} />
           </Routes>
           <NavbarComponent />
         </BrowserRouter>

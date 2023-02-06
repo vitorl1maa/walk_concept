@@ -31,7 +31,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Desenvolvido principalmente com React.JS e Bootstrap, este projeto simula a interface de um e-commerce de sneakers. Desenvolvi-o para praticar alguns dos fundamentos importantes do React.JS, como hooks, rotas, API de contexto e componentização.
+Desenvolvido principalmente com React.JS e Bootstrap, este projeto simula a interface de um e-commerce de sneakers. Desenvolvi-o para praticar alguns dos fundamentos importantes do React.JS, como hooks, routes, context API e componentização.
 
 ## 🔖 Layout
 

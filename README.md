@@ -35,4 +35,4 @@ Desenvolvido principalmente com React.JS e Bootstrap, este projeto simula a inte
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://index-movies.vercel.app/).
+Você pode visualizar o layout do projeto através [DESSE LINK](https://walk-concept.vercel.app/).

@@ -10,7 +10,6 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 
 import {Bag, UserCircle, List} from 'phosphor-react'
 
-
 function NavbarComponent({name, ...props}) {
   const [show, setShow] = useState(false);
 
@@ -78,7 +77,7 @@ function NavbarComponent({name, ...props}) {
                 to="/calendar"
                 style={{ color: "#ffff", textDecoration: "none" }}
               >
-                <span className="px-md-5 fs-5">Calendario</span>
+                <span className="px-md-5 fs-5">Calendário</span>
               </Link>
             </Nav>
             <div className="d-flex nav-icons">

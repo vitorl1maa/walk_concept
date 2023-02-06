@@ -65,8 +65,7 @@ export const DataProvider = (props) => {
       }, 0)
       setTotal(res);
     }
-    
-    
+     
     getTotal()
   }, [cart])
 

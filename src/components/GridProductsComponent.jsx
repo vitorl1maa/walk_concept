@@ -4,7 +4,6 @@ import { DataContext } from '../context/DataContext'
 import ProductItemComponent from './ProductItemComponent';
 import CalendarRealease from '../pages/Calendar/CalendarRealease';
 
-
 const GridCardsComponents = () => {
 
   const value = useContext(DataContext);

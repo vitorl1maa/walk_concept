@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { Button, Toast } from "react-bootstrap";
 import { Trash, CheckCircle } from "phosphor-react";
 
-
 const CartComponent = () => {
   const value = useContext(DataContext);
   const [cart, setCart] = value.cart;

@@ -8,7 +8,6 @@ import SneakerDetail from "./pages/SneakerDetail/SneakerDetail";
 import CalendarRealease from "./pages/Calendar/CalendarRealease";
 import FooterComponent from "./components/FooterComponent";
 
-
 function App() {
   return (
     <DataProvider>

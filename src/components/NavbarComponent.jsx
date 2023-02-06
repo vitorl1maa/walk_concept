@@ -32,7 +32,18 @@ function NavbarComponent({name, ...props}) {
         <Container>
           <Link to="/" style={{ textDecoration: "none" }}>
             <div href="/" style={{ color: "#ffff" }}>
-              Walk Concept
+              <span
+                style={{ fontFamily: "Permanent Marker", fontSize: "1.5rem" }}
+                
+              >
+                <span
+                  style={{ color: "#ff0000", fontFamily: "Permanent Marker" }}
+                  
+                >
+                  W
+                </span>
+                alk Concept
+              </span>
             </div>
           </Link>
           <Nav.Link
@@ -58,7 +69,7 @@ function NavbarComponent({name, ...props}) {
               >
                 <span
                   style={{ color: "#ffff", textDecoration: "none" }}
-                  className="px-md-5"
+                  className="px-md-5 fs-5"
                 >
                   Home
                 </span>
@@ -67,7 +78,7 @@ function NavbarComponent({name, ...props}) {
                 to="/calendar"
                 style={{ color: "#ffff", textDecoration: "none" }}
               >
-                <span className="px-md-5">Calendario</span>
+                <span className="px-md-5 fs-5">Calendario</span>
               </Link>
             </Nav>
             <div className="d-flex nav-icons">
@@ -93,7 +104,7 @@ function NavbarComponent({name, ...props}) {
                   </Offcanvas.Body>
                 </Offcanvas>
               </div>
-              <Nav.Link href="#/link">
+              <Nav.Link href="#">
                 <UserCircle size={40} color="#ffff" />
               </Nav.Link>
             </div>

@@ -16,7 +16,7 @@ const FooterComponent = () => {
     >
       <div className="d-flex justify-content-evenly footer-list">
         <div className="row">
-          <ul className='p-0'>
+          <ul className="p-0">
             <h3>Ajuda</h3>
             <li>Dúvidas Gerais</li>
             <li>Pedidos</li>
@@ -27,7 +27,7 @@ const FooterComponent = () => {
           </ul>
         </div>
         <div>
-          <ul className='p-0'>
+          <ul className="p-0">
             <h3>Sobre Nós</h3>
             <li>Sustentabilidade</li>
             <li>Ações sociais</li>
@@ -48,36 +48,10 @@ const FooterComponent = () => {
           </ul>
         </div>
       </div>
-      <div className="d-md-none">
-        <Accordion defaultActiveKey="0"  style={{ backgroundColor: "#000000" }}>
-          <Accordion.Item eventKey="0" style={{ backgroundColor: "#000000" }}>
-            <Accordion.Header style={{ backgroundColor: "#000000" }}>
-              AJUDA
-            </Accordion.Header>
-            <Accordion.Body style={{ backgroundColor: "#000000" }}>
-              <ul>
-                <li>Dúvidas Gerais</li>
-                <li>Pedidos</li>
-                <li>Entregas</li>
-                <li>Trocas e Devoluções</li>
-                <li>Corporativo</li>
-                <li>Fale Conosco</li>
-              </ul>
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>SOBRE NÓS</Accordion.Header>
-            <Accordion.Body>
-              <ul>
-                <li>Sustentabilidade</li>
-                <li>Ações sociais</li>
-              </ul>
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
+      <div className="d-lg-none">
         <div className="mt-4">
-          <h3>Redes Sociais</h3>
-          <ul className="d-flex  p-0">
+          <h3 className='text-center'>Redes Sociais</h3>
+          <ul className="d-flex  p-0 justify-content-center">
             <li>
               <FacebookLogo size={32} />
             </li>

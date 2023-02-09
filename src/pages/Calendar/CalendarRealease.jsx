@@ -28,11 +28,3 @@ const CalendarRealease = () => {
 };
 
 export default CalendarRealease;
-
-
-        // <div key={calendar.id}>
-        //   <h3>{calendar.title}</h3>
-        //   <img src={calendar.image} alt="" />
-        //   <p>{calendar.date_release} </p>
-        //   <p>{calendar.price}</p>
-        // </div>
